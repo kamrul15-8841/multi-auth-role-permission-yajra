@@ -59,24 +59,25 @@
                             <li class="nav-item">
                                 @can('role-list')
                                 <a id="" class="nav-link" href="{{ route('permissions.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Permissions List
+                                    Permissions
                                 </a>
                                 @endcan
                             </li>
                             <li class="nav-item">
                                 @can('role-list')
                                 <a id="" class="nav-link" href="{{ route('roles.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Role List
+                                    Role
                                 </a>
                                 @endcan
                             </li>
                             <li class="nav-item">
                                 @can('user-list')
                                 <a id="" class="nav-link" href="{{ route('users.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    User List
+                                    User
                                 </a>
                                 @endcan
                             </li>
+                            @can('user-list')
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     User Management
@@ -85,21 +86,22 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     @can('user-list')
                                         <a id="" class="nav-link" href="{{ route('users.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            User List
+                                            User
                                         </a>
                                     @endcan
                                     @can('role-list')
                                         <a id="" class="nav-link" href="{{ route('roles.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            Role List
+                                            Role
                                         </a>
                                     @endcan
                                     @can('role-list')
                                         <a id="" class="nav-link" href="{{ route('permissions.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            Permissions List
+                                            Permissions
                                         </a>
                                     @endcan
                                 </div>
                             </li>
+                            @endcan
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

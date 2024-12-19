@@ -30,7 +30,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('permissions', PermissionController::class);
 });
 Route::middleware(['auth'])->group(function () {
-    Route::resource('users', UserController::class);
-    Route::resource('roles', RoleController::class);
-    Route::resource('permissions', PermissionController::class);
+//    Route::resource('users', UserController::class);
+//    Route::resource('roles', RoleController::class);
+//    Route::resource('permissions', PermissionController::class);
 });
