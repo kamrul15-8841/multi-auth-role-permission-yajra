@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'KAMRUL') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -55,7 +55,14 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                        @else
+                            @else
+                            <li class="nav-item">
+                                @can('role-list')
+                                <a id="" class="nav-link" href="{{ route('permissions.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Permissions List
+                                </a>
+                                @endcan
+                            </li>
                             <li class="nav-item">
                                 @can('role-list')
                                 <a id="" class="nav-link" href="{{ route('roles.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -69,6 +76,29 @@
                                     User List
                                 </a>
                                 @endcan
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    User Management
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    @can('user-list')
+                                        <a id="" class="nav-link" href="{{ route('users.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            User List
+                                        </a>
+                                    @endcan
+                                    @can('role-list')
+                                        <a id="" class="nav-link" href="{{ route('roles.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            Role List
+                                        </a>
+                                    @endcan
+                                    @can('role-list')
+                                        <a id="" class="nav-link" href="{{ route('permissions.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            Permissions List
+                                        </a>
+                                    @endcan
+                                </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
