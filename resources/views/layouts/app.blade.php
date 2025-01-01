@@ -77,6 +77,23 @@
                                 </a>
                                 @endcan
                             </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Portfolio Management
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a id="" class="nav-link" href="{{ route('projects.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            Projects
+                                        </a>
+                                        <a id="" class="nav-link" href="{{ route('roles.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            Role
+                                        </a>
+                                        <a id="" class="nav-link" href="{{ route('permissions.index') }}" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            Permissions
+                                        </a>
+                                </div>
+                            </li>
                             @can('user-list')
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

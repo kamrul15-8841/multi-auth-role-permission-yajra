@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,9 +29,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('roles', RoleController::class);
     Route::resource('permissions', PermissionController::class);
+    Route::get('/projects/generate-slug', [ProjectController::class, 'generateSlug'])->name('projects.generateSlug');
+
 });
 Route::middleware(['auth'])->group(function () {
-//    Route::resource('users', UserController::class);
+    Route::resource('projects', ProjectController::class);
+    Route::patch('projects/{project}/toggle-status', [ProjectController::class, 'toggleStatus'])->name('projects.toggle-status');
+
+    //    Route::resource('users', UserController::class);
 //    Route::resource('roles', RoleController::class);
 //    Route::resource('permissions', PermissionController::class);
 });
